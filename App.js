@@ -4,7 +4,7 @@ import BodyMain from "./components/BodyMain";
 import Footer from "./components/Footer";
 import { appStyle } from "./styles/AppStyle";
 import { View, ScrollView, Alert } from "react-native";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AddTodo from "./components/AddTodo";
 import uuid from "react-native-uuid";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -12,6 +12,7 @@ let flags = { firstRender: true, firstLoad: false };
 export default function App() {
   const [todolist, setTodoList] = useState([]);
   const [filterList, setFilterList] = useState([]);
+  const scrollViewRef = useRef();
   useEffect(() => {
     loadTodoList();
   }, []);
@@ -51,6 +52,9 @@ export default function App() {
       isCompleted: false,
     };
     setTodoList([...todolist, newTodo]);
+    setTimeout(() => {
+      scrollViewRef.current.scrollToEnd();
+    }, 300);
   };
   const deleteTodo = (data) => {
     Alert.alert("Delete Note", "Are you sure?", [
@@ -90,7 +94,7 @@ export default function App() {
           <View style={appStyle.header}>
             <Header />
           </View>
-          <ScrollView style={appStyle.bodyMain}>
+          <ScrollView style={appStyle.bodyMain} ref={scrollViewRef}>
             <BodyMain
               todo={filterList}
               updateTodo={setTodoList}
