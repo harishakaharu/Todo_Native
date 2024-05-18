@@ -1,5 +1,11 @@
 # Todo List App
 
+# Preview
+![Screenshot_20240518-224020](https://github.com/harishakaharu/Todo_Native/assets/92537253/e15280bc-f1c5-45a7-ab6f-38c9f2381051)
+![Screenshot_20240518-224024](https://github.com/harishakaharu/Todo_Native/assets/92537253/fd4a388c-9030-4927-ae5c-9a89a354a882)
+![Screenshot_20240518-224033](https://github.com/harishakaharu/Todo_Native/assets/92537253/f5c36bd7-2272-40cb-abe5-2440cd019a54)
+
+
 The Todo List App is a simple mobile application built using Expo for native development. It allows users to create, manage, and organize their tasks efficiently.
 
 ## Installation
